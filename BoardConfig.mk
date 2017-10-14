@@ -16,17 +16,17 @@
 # inherit from common msm8998-common
 -include device/xiaomi/msm8998-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/xiaomi/chiron
+PLATFORM_PATH := device/xiaomi/chiron
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := chiron
 
 # Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 
 TARGET_KERNEL_CONFIG := sagit_user_defconfig
 
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := $(PLATFORM_PATH)/mkbootimg.mk
 TARGET_PREBUILT_KERNEL := vendor/xiaomi/chiron/zImage
 
 # inherit from the proprietary version
