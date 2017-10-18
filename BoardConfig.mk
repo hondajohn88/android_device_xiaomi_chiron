@@ -21,6 +21,9 @@ PLATFORM_PATH := device/xiaomi/chiron
 # Assert
 TARGET_OTA_ASSERT_DEVICE := chiron
 
+# Audio
+AUDIO_FEATURE_ELLIPTIC_ULTRASOUND_SUPPORT := true
+
 # Properties
 TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 
