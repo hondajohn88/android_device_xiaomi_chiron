@@ -18,9 +18,9 @@
 set -e
 
 # Required!
-export DEVICE=chiron
+export DEVICE=mata
 export DEVICE_COMMON=msm8998-common
-export VENDOR=xiaomi
+export VENDOR=essential
 
 export DEVICE_BRINGUP_YEAR=2017
 

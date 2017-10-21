@@ -14,17 +14,25 @@
 # limitations under the License.
 #
 
-# call the proprietary setup
-$(call inherit-product, vendor/xiaomi/chiron/chiron-vendor.mk)
+# inherit from common msm8998-common
+-include device/xiaomi/msm8998-common/BoardConfigCommon.mk
 
-# Local overlays
-#DEVICE_PACKAGE_OVERLAYS += \
-#    $(LOCAL_PATH)/overlay \
-#    $(LOCAL_PATH)/overlay-lineage
+PLATFORM_PATH := device/xiaomi/chiron
 
-# Inherit from msm8998-common
-$(call inherit-product, device/xiaomi/msm8998-common/msm8998.mk)
+# Assert
+TARGET_OTA_ASSERT_DEVICE := chiron
 
-PRODUCT_COPY_FILES += \
-      $(LOCAL_PATH)/audio/mixer_paths_tasha.xml:system/etc/mixer_paths_tasha.xml
+# Audio
+AUDIO_FEATURE_ELLIPTIC_ULTRASOUND_SUPPORT := true
+
+# Properties
+TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
+
+TARGET_KERNEL_CONFIG := sagit_user_defconfig
+
+BOARD_CUSTOM_BOOTIMG_MK := $(PLATFORM_PATH)/mkbootimg.mk
+TARGET_PREBUILT_KERNEL := vendor/xiaomi/chiron/zImage
+
+# inherit from the proprietary version
+-include vendor/xiaomi/chiron/BoardConfigVendor.mk
 
