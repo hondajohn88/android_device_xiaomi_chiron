@@ -38,7 +38,6 @@ PRODUCT_COPY_FILES += \
       $(LOCAL_PATH)/audio/listen_platform_info.xml:system/etc/listen_platform_info.xml \
       $(LOCAL_PATH)/audio/mixer_paths_skuk.xml:system/etc/mixer_paths_skuk.xml \
       $(LOCAL_PATH)/audio/mixer_paths_tasha.xml:system/etc/mixer_paths_tasha.xml \
-      $(LOCAL_PATH)/audio/mixer_paths_tasha_s.xml:system/etc/mixer_paths_tasha_s.xml \
       $(LOCAL_PATH)/audio/mixer_paths_qvr.xml:system/etc/mixer_paths_qvr.xml \
       $(LOCAL_PATH)/audio/r_submix_audio_policy_configuration.xml:system/etc/r_submix_audio_policy_configuration.xml \
       $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:system/etc/sound_trigger_mixer_paths.xml \
@@ -47,3 +46,7 @@ PRODUCT_COPY_FILES += \
       $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
       $(LOCAL_PATH)/audio/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml
 
+# Device config scripts
+PRODUCT_PACKAGES += \
+    usf_post_boot.sh \
+    usf_settings.sh
