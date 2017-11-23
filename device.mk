@@ -45,8 +45,3 @@ PRODUCT_COPY_FILES += \
       $(LOCAL_PATH)/audio/sound_trigger_mixer_paths_wcd9340.xml:system/etc/sound_trigger_mixer_paths_wcd9340.xml \
       $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:system/etc/sound_trigger_platform_info.xml \
       $(LOCAL_PATH)/audio/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml
-
-# Device config scripts
-PRODUCT_PACKAGES += \
-    usf_post_boot.sh \
-    usf_settings.sh
