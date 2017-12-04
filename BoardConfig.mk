@@ -29,8 +29,5 @@ TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 
 TARGET_KERNEL_CONFIG := sagit_user_defconfig
 
-BOARD_CUSTOM_BOOTIMG_MK := $(PLATFORM_PATH)/mkbootimg.mk
-TARGET_PREBUILT_KERNEL := vendor/xiaomi/chiron/zImage
-
 # inherit from the proprietary version
 -include vendor/xiaomi/chiron/BoardConfigVendor.mk
