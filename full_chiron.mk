@@ -25,5 +25,5 @@ $(call inherit-product, device/xiaomi/chiron/device.mk)
 PRODUCT_NAME := full_chiron
 PRODUCT_DEVICE := chiron
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := MIX 2
+PRODUCT_MODEL := Mi Mix 2
 PRODUCT_MANUFACTURER := Xiaomi
