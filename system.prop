@@ -1,4 +1,10 @@
 # enable navigation bar
 qemu.hw.mainkeys=0
 
+# 3rd party camera
+persist.camera.HAL3.enabled=1
+
+# Fingerprint vendor set
 ro.boot.fingerprint=fpc
+ro.hardware.fp.fpc=true
+ro.hardware.fp.goodix=true
