@@ -1,0 +1,6 @@
+type sms_secure_service, vndservice_manager_type;
+type mm-pp-daemon, vndservice_manager_type;
+type qseeproxy, vndservice_manager_type;
+type per_mgr_service, vndservice_manager_type;
+type qdisplay_service, vndservice_manager_type;
+
