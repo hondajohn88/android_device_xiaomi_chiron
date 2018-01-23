@@ -4,6 +4,7 @@ ifneq ($(BUILD_TINY_ANDROID),true)
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
+LOCAL_USE_VNDK := true
 
 ## Libs
 LOCAL_SHARED_LIBRARIES := \

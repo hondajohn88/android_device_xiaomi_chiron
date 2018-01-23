@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+BOARD_VNDK_VERSION := current
+
 BOARD_VENDOR := xiaomi
 
 DEVICE_PATH := device/xiaomi/chiron
@@ -205,8 +207,10 @@ TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 
 # HIDL
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE_FRAMEWORK := $(DEVICE_PATH)/manifest/system/manifest.xml
+DEVICE_MANIFEST_FILE_DEVICE := $(DEVICE_PATH)/manifest/system_vendor/manifest.xml
+DEVICE_MATRIX_FILE_FRAMEWORK := $(DEVICE_PATH)/manifest/system/compatibility_matrix.xml
+DEVICE_MATRIX_FILE_DEVICE := $(DEVICE_PATH)/manifest/system_vendor/compatibility_matrix.xml
 
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
