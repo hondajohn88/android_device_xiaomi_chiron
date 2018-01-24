@@ -9,7 +9,6 @@ LOCAL_MODULE := libloc_eng
 LOCAL_MODULE_OWNER := qcom
 
 LOCAL_MODULE_TAGS := optional
-LOCAL_USE_VNDK := true
 
 LOCAL_SHARED_LIBRARIES := \
     libutils \

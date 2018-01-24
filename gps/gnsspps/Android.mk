@@ -5,7 +5,6 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := libgnsspps
 
 LOCAL_MODULE_TAGS := optional
-LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_SHARED_LIBRARIES := \
     libutils \

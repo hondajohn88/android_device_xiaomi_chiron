@@ -1,5 +1,5 @@
 LOCAL_PATH := $(call my-dir)
-LOCAL_USE_VNDK := true
+
 # add RPC dirs if RPC is available
 ifneq ($(TARGET_NO_RPC),true)
 
