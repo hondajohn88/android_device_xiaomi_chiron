@@ -33,4 +33,3 @@
     <device name="SND_DEVICE_OUT_SPEAKER" acdb_id="10" />
     <device name="SND_DEVICE_OUT_VOICE_SPEAKER" acdb_id="10" />
 </audio_platform_info_i2s>
- 
