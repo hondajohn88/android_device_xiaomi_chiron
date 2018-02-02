@@ -92,38 +92,44 @@ PRODUCT_PACKAGES += \
     tinymix
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/system/audio_effects.conf:system/etc/audio_effects.conf \
-    $(LOCAL_PATH)/audio/system/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/audio/vendor/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
-    $(LOCAL_PATH)/audio/vendor/etc/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/audio_effects.conf:system/etc/audio_effects.conf \
-    $(LOCAL_PATH)/audio/vendor/etc/audio_output_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_output_policy.conf \
-    $(LOCAL_PATH)/audio/vendor/etc/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/audio_platform_info_i2s.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_i2s.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/audio_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer.txt \
-    $(LOCAL_PATH)/audio/vendor/etc/audio_tuning_mixer_tavil.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer_tavil.txt \
-    $(LOCAL_PATH)/audio/vendor/etc/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_dtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_dtp.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_i2s.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_i2s.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_qvr.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_qvr.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_skuk.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_skuk.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_tasha.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tasha.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_tasha_s.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tasha_s.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_tavil.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tavil.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/sound_trigger_mixer_paths_wcd9330.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths_wcd9330.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/sound_trigger_mixer_paths_wcd9340.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths_wcd9340.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths_wcd9330.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml \
-
-PRODUCT_COPY_FILES += \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
+    $(LOCAL_PATH)/audio/system/etc/audio_effects.conf:system/etc/audio_effects.conf \
+    $(LOCAL_PATH)/audio/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/audio/system/etc/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/audio/system/etc/media_profiles_V1_0.dtd:system/etc/media_profiles_V1_0.dtd \
+    $(LOCAL_PATH)/audio/vendor/etc/audio/audio_policy_configuration.xml:vendor/etc/audio/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/a2dp_audio_policy_configuration.xml:vendor/etc/a2dp_audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/apdr.conf:vendor/etc/apdr.conf \
+    $(LOCAL_PATH)/audio/vendor/etc/audio_effects.conf:vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/audio/vendor/etc/audio_output_policy.conf:vendor/etc/audio_output_policy.conf \
+    $(LOCAL_PATH)/audio/vendor/etc/audio_platform_info.xml:vendor/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/audio_platform_info_i2s.xml:vendor/etc/audio_platform_info_i2s.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/audio_policy_configuration.xml:vendor/etc/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/audio_policy_volumes.xml:vendor/etc/audio_policy_volumes.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/audio_tuning_mixer.txt:vendor/etc/audio_tuning_mixer.txt \
+    $(LOCAL_PATH)/audio/vendor/etc/audio_tuning_mixer_tavil.txt:vendor/etc/audio_tuning_mixer_tavil.txt \
+    $(LOCAL_PATH)/audio/vendor/etc/default_volume_tables.xml:vendor/etc/default_volume_tables.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/media_codecs.xml:vendor/etc/media_codecs.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/media_codecs_google_audio.xml:vendor/etc/media_codecs_google_audio.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/media_codecs_google_telephony.xml:vendor/etc/media_codecs_google_telephony.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/media_codecs_google_video.xml:vendor/etc/media_codecs_google_video.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/media_codecs_performance.xml:vendor/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/media_profiles.xml:vendor/etc/media_profiles.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/media_profiles_V1_0.xml:vendor/etc/media_profiles_V1_0.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/media_profiles_vendor.xml:vendor/etc/media_profiles_vendor.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths.xml:vendor/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_dtp.xml:vendor/etc/mixer_paths_dtp.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_i2s.xml:vendor/etc/mixer_paths_i2s.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_qvr.xml:vendor/etc/mixer_paths_qvr.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_skuk.xml:vendor/etc/mixer_paths_skuk.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_tasha.xml:vendor/etc/mixer_paths_tasha.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_tasha_s.xml:vendor/etc/mixer_paths_tasha_s.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/mixer_paths_tavil.xml:vendor/etc/mixer_paths_tavil.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/r_submix_audio_policy_configuration.xml:vendor/etc/r_submix_audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/sound_trigger_mixer_paths.xml:vendor/etc/sound_trigger_mixer_paths.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/sound_trigger_mixer_paths_wcd9330.xml:vendor/etc/sound_trigger_mixer_paths_wcd9330.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/sound_trigger_mixer_paths_wcd9340.xml:vendor/etc/sound_trigger_mixer_paths_wcd9340.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/sound_trigger_platform_info.xml:vendor/etc/sound_trigger_platform_info.xml \
+    $(LOCAL_PATH)/audio/vendor/etc/usb_audio_policy_configuration.xml:vendor/etc/usb_audio_policy_configuration.xml
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -254,23 +260,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libjni_livedisplay
 
-# Media
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/system/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/audio/system/media_profiles_V1_0.dtd:system/etc/media_profiles_V1_0.dtd \
-    $(LOCAL_PATH)/audio/vendor/etc/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml \
-    $(LOCAL_PATH)/audio/vendor/etc/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml \
-
-PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml \
-
 # Media Extensions
 PRODUCT_PACKAGES += \
     libavmediaserviceextensions \
@@ -376,12 +365,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     $(LOCAL_PATH)/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
-
-# Telephony packages
-PRODUCT_PACKAGES += \
-    messaging \
-    Stk \
-    CellBroadcastReceiver
 
 # Telephony packages
 PRODUCT_PACKAGES += \
