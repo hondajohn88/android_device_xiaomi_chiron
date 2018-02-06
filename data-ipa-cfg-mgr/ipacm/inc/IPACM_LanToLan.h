@@ -52,6 +52,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #define MAX_NUM_CACHED_CLIENT_ADD_EVENT 10
 #define MAX_NUM_IFACE 10
 #define MAX_NUM_CLIENT 16
+
 struct vlan_iface_info
 {
 	char vlan_iface_name[IPA_RESOURCE_NAME_MAX];
@@ -159,6 +160,7 @@ public:
 	void increment_ref_cnt_peer_l2_hdr_type(ipa_hdr_l2_type peer_l2_type);
 
 	void decrement_ref_cnt_peer_l2_hdr_type(ipa_hdr_l2_type peer_l2_type);
+#ifdef FEATURE_L2TP
 	void switch_to_l2tp_iface();
 
 	bool set_l2tp_iface(char *vlan_iface_name);
@@ -168,7 +170,7 @@ public:
 	void handle_l2tp_enable();
 
 	void handle_l2tp_disable();
-
+#endif
 private:
 
 	IPACM_Lan *m_p_iface;
@@ -201,6 +203,7 @@ private:
 	void del_client_rt_rule(peer_iface_info *peer, client_info *client);
 
 	void add_l2tp_client_rt_rule(peer_iface_info *peer, client_info *client);
+
 	void clear_all_flt_rule_for_one_peer_iface(peer_iface_info *peer);
 
 	void clear_all_rt_rule_for_one_peer_iface(peer_iface_info *peer);
@@ -220,17 +223,22 @@ public:
 
 	static IPACM_LanToLan* p_instance;
 	static IPACM_LanToLan* get_instance();
+#ifdef FEATURE_L2TP
 	bool has_l2tp_iface();
+#endif
 
 private:
+
 	IPACM_LanToLan();
 
 	~IPACM_LanToLan();
+
 	bool m_has_l2tp_iface;
 
 	list<class IPACM_LanToLan_Iface> m_iface;
 
 	list<ipacm_event_eth_bridge> m_cached_client_add_event;
+
 	list<vlan_iface_info> m_vlan_iface;
 
 	list<l2tp_vlan_mapping_info> m_l2tp_vlan_mapping;
@@ -244,6 +252,8 @@ private:
 	void handle_client_del(ipacm_event_eth_bridge *data);
 
 	void handle_wlan_scc_mcc_switch(ipacm_event_eth_bridge *data);
+
+#ifdef FEATURE_L2TP
 	void handle_add_vlan_iface(ipa_ioc_vlan_iface_info *data);
 
 	void handle_del_vlan_iface(ipa_ioc_vlan_iface_info *data);
@@ -255,6 +265,7 @@ private:
 	void handle_vlan_client_info(ipacm_event_data_all *data);
 
 	void handle_vlan_iface_info(ipacm_event_data_all *data);
+#endif
 
 	void handle_new_iface_up(IPACM_LanToLan_Iface *new_iface, IPACM_LanToLan_Iface *exist_iface);
 

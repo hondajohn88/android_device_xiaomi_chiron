@@ -30,24 +30,63 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+#include <android-base/file.h>
 #include <android-base/properties.h>
+#include <android-base/strings.h>
 
 #include "property_service.h"
 #include "vendor_init.h"
 
 using android::base::GetProperty;
+using android::base::ReadFileToString;
+using android::base::Trim;
 using android::init::property_set;
 
-std::string heapminfree;
-std::string heapmaxfree;
+char const *heapminfree;
+char const *heapmaxfree;
 
 static void init_finger_print_properties()
 {
-	if (access("/persist/fpc/calibration_image.pndat", 0) == -1) {
-		android::init::property_set("ro.boot.fingerprint", "goodix");
+	/*if (access("/persist/fpc/calibration_image.pndat", 0) == -1) {
+		property_set("ro.boot.fingerprint", "goodix");
 	} else {
-		android::init::property_set("ro.boot.fingerprint", "fpc");
-	}
+		property_set("ro.boot.fingerprint", "fpc");
+	}*/
+    property_set("ro.boot.fingerprint", "fpc");
+}
+
+static void init_alarm_boot_properties()
+{
+    char const *boot_reason_file = "/proc/sys/kernel/boot_reason";
+    char const *power_off_alarm_file = "/persist/alarm/powerOffAlarmSet";
+    std::string boot_reason;
+    std::string power_off_alarm;
+    std::string reboot_reason = GetProperty("ro.boot.alarmboot", "");
+
+    if (ReadFileToString(boot_reason_file, &boot_reason)
+            && ReadFileToString(power_off_alarm_file, &power_off_alarm)) {
+        /*
+         * Setup ro.alarm_boot value to true when it is RTC triggered boot up
+         * For existing PMIC chips, the following mapping applies
+         * for the value of boot_reason:
+         *
+         * 0 -> unknown
+         * 1 -> hard reset
+         * 2 -> sudden momentary power loss (SMPL)
+         * 3 -> real time clock (RTC)
+         * 4 -> DC charger inserted
+         * 5 -> USB charger inserted
+         * 6 -> PON1 pin toggled (for secondary PMICs)
+         * 7 -> CBLPWR_N pin toggled (for external power supply)
+         * 8 -> KPDPWR_N pin toggled (power key pressed)
+         */
+         if ((Trim(boot_reason) == "3" || reboot_reason == "true")
+                 && Trim(power_off_alarm) == "1") {
+             property_set("ro.alarm_boot", "true");
+         } else {
+             property_set("ro.alarm_boot", "false");
+         }
+    }
 }
 
 void vendor_load_properties()
@@ -58,5 +97,6 @@ void vendor_load_properties()
     if (platform != ANDROID_TARGET)
         return;
 
+    init_alarm_boot_properties();
     init_finger_print_properties();
 }
