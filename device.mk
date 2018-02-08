@@ -132,7 +132,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
+    Camera2 \
     MiuiCamera \
     libshim_MiCamera
 
@@ -159,6 +159,10 @@ PRODUCT_PACKAGES += \
     libgenlock \
     liboverlay \
     libtinyxml
+
+# Doze
+PRODUCT_PACKAGES += \
+   Doze
 
 # For config.fs
 PRODUCT_PACKAGES += \
