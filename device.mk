@@ -132,7 +132,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Camera2 \
+    Snap \
     MiuiCamera \
     libshim_MiCamera
 
