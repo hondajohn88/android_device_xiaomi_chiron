@@ -23,7 +23,7 @@ $(call inherit-product, device/xiaomi/chiron/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_NAME := full_chiron
-PRODUCT_DEVICE := chiron
+PRODUCT_DEVICE := chiron 
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := MIX 2
+PRODUCT_MODEL := MI Mix 2
 PRODUCT_MANUFACTURER := Xiaomi
