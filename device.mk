@@ -160,10 +160,6 @@ PRODUCT_PACKAGES += \
     libgenlock \
     liboverlay \
     libtinyxml
-
-# Doze
-PRODUCT_PACKAGES += \
-    XiaomiDoze
     
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
