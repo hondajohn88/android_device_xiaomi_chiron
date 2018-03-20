@@ -1,4 +1,10 @@
 # Audio
+persist.audio.calfile0=/system/vendor/etc/acdbdata/ChironS/Forte_ChironS_Bluetooth_cal.acdb
+persist.audio.calfile1=/system/vendor/etc/acdbdata/ChironS/Forte_ChironS_General_cal.acdb
+persist.audio.calfile2=/system/vendor/etc/acdbdata/ChironS/Forte_ChironS_Global_cal.acdb
+persist.audio.calfile3=/system/vendor/etc/acdbdata/ChironS/Forte_ChironS_Handset_cal.acdb
+persist.audio.calfile4=/system/vendor/etc/acdbdata/ChironS/Forte_ChironS_Hdmi_cal.acdb
+persist.audio.calfile5=/system/vendor/etc/acdbdata/ChironS/Forte_ChironS_Headset_cal.acdb
 audio.adm.buffering.ms=6
 af.fast_track_multiplier=2
 vendor.audio_hal.period_size=192
@@ -149,7 +155,7 @@ persist.camera.xm.green.b=0.96
 persist.camera.xm.green.r=0.97
 persist.mm.enable.prefetch=true
 persist.vendor.qti.telephony.vt_cam_interface=1
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.miui.cit,org.cyanogenmod.snap
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.miui.cit,org.lineageos.snap
 vidc.enc.dcvs.extra-buff-count=2
 
 # Memory
@@ -189,6 +195,18 @@ ro.vendor.sensors.multishake=true
 ro.vendor.sensors.pmd=false
 ro.vendor.sensors.sta_detect=true
 
+# Debug Options
+persist.dbg.ims_volte_enable=1 
+persist.dbg.volte_avail_ovr=1 
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
+
+# Radio Options
+persist.radio.rat_on=combine
+persist.radio.data_ltd_sys_ind=1
+persist.radio.data_con_rprt=1
+persist.radio.calls.on.ims=1
+
 # WFD
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
@@ -198,13 +216,21 @@ ro.wlan.mimo=1
 
 # USB
 sys.usb.configfs=1
+persist.sys.usb.config.extra=none
 
 # OTG support
 persist.sys.oem.otg_support=true
+
+#Voice assistant
+ro.opa.eligible_device=true
+ 
+# Sensors
+ro.qti.sensors.noneui=true
+ro.xiaomi.sar_fusion=true
 
 # enable navigation bar
 qemu.hw.mainkeys=0
 
 persist.service.adb.enable=1
 persist.service.debuggable=1
-#persist.sys.usb.config=mtp.diag,adb
+persist.sys.usb.config=mtp,diag,adb

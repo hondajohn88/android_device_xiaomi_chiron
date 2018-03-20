@@ -1,6 +1,5 @@
 /*
- * Copyright (C) 2014 The CyanogenMod Project
- *           (C) 2017 The LineageOS Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,27 +30,16 @@ import org.lineageos.internal.util.FileUtils;
 public class KeyDisabler {
 
     private static String CONTROL_PATH = "/proc/touchpanel/capacitive_keys_enable";
-    private static String FPC_PATH     = "/sys/devices/soc/soc:fingerprint_fpc/enable_key_events";
-    private static String GOODIX_PATH  = "/sys/module/gf_spi/parameters/report_home_events";
 
     public static boolean isSupported() {
-        return FileUtils.isFileWritable(CONTROL_PATH) &&
-                   FileUtils.isFileWritable(FPC_PATH) &&
-                   FileUtils.isFileWritable(GOODIX_PATH);
+        return FileUtils.isFileWritable(CONTROL_PATH);
     }
 
     public static boolean isActive() {
-        return FileUtils.readOneLine(CONTROL_PATH).equals("0") ||
-                   FileUtils.readOneLine(FPC_PATH).equals("0") ||
-                   FileUtils.readOneLine(GOODIX_PATH).equals("0");
+        return FileUtils.readOneLine(CONTROL_PATH).equals("0");
     }
 
     public static boolean setActive(boolean state) {
-        String value = state ? "0" : "1";
-        boolean control = FileUtils.writeLine(CONTROL_PATH, value);
-        boolean fpc     = FileUtils.writeLine(FPC_PATH, value);
-        boolean goodix  = FileUtils.writeLine(GOODIX_PATH, value);
-
-        return control && fpc && goodix;
+        return FileUtils.writeLine(CONTROL_PATH, (state ? "0" : "1"));
     }
 }

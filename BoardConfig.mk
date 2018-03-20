@@ -34,7 +34,9 @@ TARGET_2ND_CPU_VARIANT := cortex-a9
 
 ENABLE_CPUSETS := true
 
+TARGET_USES_UEFI := true
 TARGET_USES_64_BIT_BINDER := true
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8998
@@ -51,7 +53,10 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CONFIG := sagit_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8998
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+
+# Linaro
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/gcc-linaro-5.5.0/bin
+KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-gnu-
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8998
@@ -211,6 +216,7 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 # Lineage Hardware
 BOARD_HARDWARE_CLASS += \
     $(DEVICE_PATH)/lineagehw
+BOARD_USES_LINEAGE_HARDWARE := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -240,10 +246,8 @@ BOARD_USES_QC_TIME_SERVICES := true
 TARGET_USE_SDCLANG := true
 SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
 
-ifneq ($(HOST_OS),darwin)
 SDCLANG := true
-SDCLANG_PATH := prebuilts/llvm-5.0.1-aarch64-linux-gnu/bin
-endif
+SDCLANG_PATH := prebuilts/snapdragon-llvm-4.0.2/toolchains/Snapdragon_LLVM_4.0/prebuilt/linux-x86_64/bin
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/recovery.fstab
