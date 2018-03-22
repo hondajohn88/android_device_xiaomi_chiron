@@ -213,11 +213,6 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/hidl/compatibility_matrix.xml
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
-# Lineage Hardware
-BOARD_HARDWARE_CLASS += \
-    $(DEVICE_PATH)/lineagehw
-BOARD_USES_LINEAGE_HARDWARE := true
-
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
