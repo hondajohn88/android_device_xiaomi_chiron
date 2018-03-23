@@ -134,7 +134,7 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
+    GCam \
     libshim_MiCamera
 
 PRODUCT_COPY_FILES += \
