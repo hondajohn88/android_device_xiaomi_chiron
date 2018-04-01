@@ -1,5 +1,0 @@
-allow wcnss_service shell_exec:file { r_file_perms execute execute_no_trans };
-allow wcnss_service toolbox_exec:file { r_file_perms execute execute_no_trans };
-allow wcnss_service self:capability { setgid setuid };
-allow wcnss_service mpctl_socket:sock_file write;
-allow wcnss_service perfd:unix_stream_socket connectto;

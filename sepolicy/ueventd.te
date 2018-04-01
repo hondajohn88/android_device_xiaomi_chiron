@@ -1,1 +1,0 @@
-allow ueventd goodix_fpd_device:chr_file { create setattr };
