@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_chiron.mk
+    $(LOCAL_DIR)/carbon_chiron.mk
