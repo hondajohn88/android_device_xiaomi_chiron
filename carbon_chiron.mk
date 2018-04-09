@@ -2,6 +2,7 @@ $(call inherit-product, device/xiaomi/chiron/full_chiron.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/carbon/config/common.mk)
+$(call inherit-product, vendor/carbon/config/gsm.mk)
 
 PRODUCT_NAME := carbon_chiron
 PRODUCT_DEVICE := chiron
