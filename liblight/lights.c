@@ -80,7 +80,7 @@ char const*const PERSISTENCE_FILE
 static int BRIGHTNESS_RAMP[RAMP_SIZE] = { 0, 12, 25, 37, 50, 72, 85, 100 };
 #define RAMP_STEP_DURATION 50
 
-#define DEFAULT_MAX_BRIGHTNESS 255
+#define DEFAULT_MAX_BRIGHTNESS 200
 int max_brightness;
 
 /**
@@ -433,7 +433,7 @@ static int open_lights(const struct hw_module_t* module, char const* name,
 
     max_brightness = read_int(LCD_MAX_BRIGHTNESS_FILE);
     if (max_brightness < 0) {
-        ALOGE("%s: failed to read max panel brightness, fallback to 255!\n", __func__);
+        ALOGE("%s: failed to read max panel brightness, fallback to 200!\n", __func__);
         max_brightness = DEFAULT_MAX_BRIGHTNESS;
     }
 
