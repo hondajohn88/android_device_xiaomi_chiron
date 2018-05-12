@@ -1,1 +1,1 @@
-allow audioserver persist_file:dir search;
+allow audioserver hal_sensors_default:binder call;
