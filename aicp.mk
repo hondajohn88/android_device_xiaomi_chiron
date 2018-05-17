@@ -25,12 +25,12 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common AICP stuff.
-$(call inherit-product, vendor/aicp/config/common_full_phone.mk)
+$(call inherit-product, vendor/aokp/config/common_full_phone.mk)
 
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := chiron
-PRODUCT_NAME := aicp_chiron
+PRODUCT_NAME := aokp_chiron
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := MI Mix 2
 TARGET_VENDOR := xiaomi
@@ -39,7 +39,8 @@ TARGET_VENDOR := xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRIVATE_BUILD_DESC="chiron-user 8.0.0 OPR1.170623.027 V9.5.4.0.ODEMIFA release-keys" \
     TARGET_DEVICE="chiron" \
-    PRODUCT_NAME="chiron" \
-    BUILD_FINGERPRINT="Xiaomi/chiron/chiron:8.0.0/OPR1.170623.027/V9.5.4.0.ODEMIFA:user/release-keys" \
-    PRIVATE_BUILD_DESC="chiron-user 8.0.0 OPR1.170623.027 V9.5.4.0.ODEMIFA release-keys"
+    PRODUCT_NAME="chiron"
+    
+BUILD_FINGERPRINT="Xiaomi/chiron/chiron:8.0.0/OPR1.170623.027/V9.5.4.0.ODEMIFA:user/release-keys"
