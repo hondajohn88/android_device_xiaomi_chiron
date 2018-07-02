@@ -23,6 +23,8 @@ DEVICE_PACKAGE_OVERLAYS += \
 $(call inherit-product, device/xiaomi/msm8998-common/msm8998.mk)
 
 # Audio
+WITH_MUSICFX := true
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     $(LOCAL_PATH)/configs/audio/mixer_paths_tasha.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tasha.xml
@@ -38,10 +40,6 @@ PRODUCT_COPY_FILES += \
 # Launcher
 PRODUCT_PACKAGES += \
     Launcher3
-
-# NFC
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
 # Call the proprietary setup
 $(call inherit-product, vendor/xiaomi/chiron/chiron-vendor.mk)
