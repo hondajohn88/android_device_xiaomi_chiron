@@ -24,13 +24,13 @@ $(call inherit-product, device/xiaomi/chiron/full_chiron.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit aos stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common dotOS stuff.
+$(call inherit-product, vendor/dot/config/common.mk)
 
 BOARD_VENDOR := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := chiron
-PRODUCT_NAME := lineage_chiron
+PRODUCT_NAME := dot_chiron
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := MI Mix 2
 TARGET_VENDOR := xiaomi
