@@ -163,7 +163,7 @@
     </array>
     <item name="cpu.awake">9.85</item>
     <item name="cpu.idle">7.46</item>
-    <item name="battery.capacity">3350</item>
+    <item name="battery.capacity">3400</item>
     <item name="wifi.controller.idle">0</item>
     <item name="wifi.controller.rx">0</item>
     <item name="wifi.controller.tx">0</item>

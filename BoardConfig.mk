@@ -28,11 +28,8 @@ TARGET_OTA_ASSERT_DEVICE := chiron
 # Audio
 AUDIO_FEATURE_ELLIPTIC_ULTRASOUND_SUPPORT := true
 
-# Properties
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-
 # SELinux
-BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+# BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Inherit from proprietary files
 include vendor/xiaomi/chiron/BoardConfigVendor.mk
