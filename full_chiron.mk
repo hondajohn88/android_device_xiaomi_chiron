@@ -1,4 +1,3 @@
-#!/bin/bash
 #
 # Copyright (C) 2017 The LineageOS Project
 #
@@ -15,23 +14,16 @@
 # limitations under the License.
 #
 
-set -e
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-export DEVICE=chiron
-export DEVICE_COMMON=msm8998-common
-export VENDOR=xiaomi
+# Inherit from chiron device
+$(call inherit-product, device/xiaomi/chiron/device.mk)
 
-./../../$VENDOR/$DEVICE_COMMON/extract-files.sh $@
-
-MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
-
-LINEAGE_ROOT="$MY_DIR"/../../..
-
-DEVICE_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
-
-#
-# Load elliptic config from vendor
-#
-ELLIPTIC_SENSOR_MODULE="$DEVICE_BLOB_ROOT"/vendor/lib64/sensors.elliptic.so
-sed -i "s|/etc/elliptic_sensor.xml|/vendor/etc/elliptic.xml|g" "$ELLIPTIC_SENSOR_MODULE"
+# Device identifier. This must come after all inclusions
+PRODUCT_NAME := full_chiron
+PRODUCT_DEVICE := chiron
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := Mi MIX 2
+PRODUCT_MANUFACTURER := Xiaomi
