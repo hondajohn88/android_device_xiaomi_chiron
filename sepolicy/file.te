@@ -2,4 +2,4 @@
 type audio_persist_file, file_type;
 
 # Ultrasound
-type sound_device, dev_type;
+#type sound_device, dev_type;
